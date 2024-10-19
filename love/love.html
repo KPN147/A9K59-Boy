@@ -254,14 +254,20 @@
         }
         else{
             clearInterval(timoutTextLetterContent)
-            const link = document.createElement('a');
-            link.href = 'https://kpn147.github.io/A9K59/'; // Change this to your desired URL
-            link.target = '_blank'; // Open link in a new tab
-            link.textContent = 'Click here!';
-            textLetterContent.appendChild(link);
+            createButton();
 
         }
     }
+    function createButton() {
+    const button = document.createElement('button');
+    button.textContent = 'Click here!';
+    button.style.display = 'block';
+    button.style.marginTop = '10px'; // Optional: styling for the button
+    button.onclick = () => {
+        window.open('https://kpn147.github.io/A9K59/', '_blank');
+    };
+    textLetterContent.appendChild(button);
+}
     function funcTimeoutLetterContent(){
         indexTextContent = 0; // Reset indexTextContent
         textLetterContent.textContent = ''; // Xóa nội dung hiện tại của textLetter
